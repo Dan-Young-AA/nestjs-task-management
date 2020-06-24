@@ -14,7 +14,7 @@ type DbConfig = {
 const dbConfig = config.get<DbConfig>("db");
 
 export const typeOrmConfig: TypeOrmModuleOptions = {
-  type: dbConfig.type as "postgres",
+  type: "mssql",
   host: process.env.RDS_HOSTNAME || dbConfig.host,
   port: process.env.RDS_PORT
     ? parseInt(process.env.RDS_PORT, 10)

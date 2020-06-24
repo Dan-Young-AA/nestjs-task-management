@@ -2,9 +2,9 @@ server:
   port: 3333
 
 db:
-  type: postgres
-  port: 5432
-  database: taskmanagement
+  type: mssql
+  port: 1433
+  database: Nucleus
 
 jwt:
   expiresIn: 3600

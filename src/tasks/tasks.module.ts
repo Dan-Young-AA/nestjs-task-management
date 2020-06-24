@@ -1,5 +1,6 @@
 import { Module } from "@nestjs/common";
 import { TypeOrmModule } from "@nestjs/typeorm";
+
 import { AuthModule } from "../auth/auth.module";
 import { TasksController } from "./tasks.controller";
 import { TaskRepository } from "./tasks.repsitory";

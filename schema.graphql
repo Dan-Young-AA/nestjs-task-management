@@ -20,7 +20,15 @@ type Mutation {
   deleteTask(id: Int!): Task!
 }
 
+type Person {
+  PersonKey: String!
+  PersonId: Int!
+  FirstName: String!
+  Surname: String!
+}
+
 type Query {
+  person(id: Int!): Person!
   tasks(filters: GetTasksFilterDto): [Task!]!
   task(id: Int!): Task!
 }
