@@ -1,0 +1,44 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+input CreateTaskDto {
+  title: String!
+  description: String!
+}
+
+input GetTasksFilterDto {
+  status: TaskStatus
+  search: String
+}
+
+type Mutation {
+  signUp(password: String!, username: String!): Boolean!
+  signIn(password: String!, username: String!): SignInResponseEntity!
+  createTask(task: CreateTaskDto!): Task!
+  updateTaskStatus(status: TaskStatus!, id: Int!): Task!
+  deleteTask(id: Int!): Task!
+}
+
+type Query {
+  tasks(filters: GetTasksFilterDto): [Task!]!
+  task(id: Int!): Task!
+}
+
+type SignInResponseEntity {
+  accessToken: String!
+}
+
+type Task {
+  id: Int!
+  title: String!
+  description: String!
+  status: String!
+  userId: Int!
+}
+
+enum TaskStatus {
+  OPEN
+  IN_PROGRESS
+  DONE
+}
