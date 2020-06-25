@@ -10,4 +10,8 @@ export class PersonService {
   public getPerson(id: number) {
     return this.personRepository.getPerson(id);
   }
+
+  public getPersons() {
+    return this.personRepository.getAllPersons();
+  }
 }

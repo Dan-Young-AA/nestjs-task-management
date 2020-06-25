@@ -21,13 +21,14 @@ type Mutation {
 }
 
 type Person {
-  PersonKey: String!
-  PersonId: Int!
-  FirstName: String!
-  Surname: String!
+  id: Int!
+  firstName: String!
+  lastName: String!
+  salutation: String!
 }
 
 type Query {
+  persons: [Person!]!
   person(id: Int!): Person!
   tasks(filters: GetTasksFilterDto): [Task!]!
   task(id: Int!): Task!

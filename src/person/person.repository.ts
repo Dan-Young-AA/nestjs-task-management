@@ -1,7 +1,7 @@
-import { NotFoundException } from "@nestjs/common";
+import { NotFoundException, Logger } from "@nestjs/common";
 import { EntityRepository, Repository } from "typeorm";
 
-import { Person } from "./person.entity";
+import { Person } from "./entities/person.entity";
 
 @EntityRepository(Person)
 export class PersonRepository extends Repository<Person> {
@@ -13,5 +13,9 @@ export class PersonRepository extends Repository<Person> {
     }
 
     return person;
+  }
+
+  public async getAllPersons() {
+    return this.find({ loadEagerRelations: true });
   }
 }
